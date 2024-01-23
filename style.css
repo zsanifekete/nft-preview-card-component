@@ -1,0 +1,215 @@
+:root {
+    --color-softblue: hsl(215, 51%, 70%);
+    --color-cyan: hsl(178, 100%, 50%);
+    --color-darkbluemain: hsl(217, 54%, 11%);
+    --color-darkbluecard: hsl(216, 50%, 16%);
+    --color-darkblueline: hsl(215, 32%, 27%);
+    --color-white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-darkbluemain);
+    font-family: "Outfit", sans-serif;
+}
+
+.nft-card {
+    max-width: 22rem;
+    background-color: var(--color-darkbluecard);
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 25px;
+    padding: 1.6rem;
+}
+
+/*-------------------------------
+            IMAGE
+--------------------------------*/
+.images-container {
+    max-width: 18.8rem;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.main-image {
+    display: block;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.overlay {
+    position: absolute;
+    background-color: var(--color-cyan);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    border-radius: 0.5rem;
+    opacity: 0;
+}
+
+.view-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.images-container:hover .overlay{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.images-container:hover .view-image {
+    display: block;
+}
+
+/*---------------------------------
+            MAIN CONTENT
+---------------------------------*/
+.text-content {
+    margin-block: 1.5rem;
+}
+
+a:link, 
+a:visited {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: var(--color-cyan);
+}
+
+.main-title {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.description {
+    font-weight: 300;
+    font-size: 1.125rem;
+    margin-block: 1.5rem;
+    color: var(--color-softblue);
+    line-height: 1.6rem;
+}
+
+/*-----------------------------
+            INFO
+-----------------------------*/
+.info {
+    max-width: 100%;
+    margin-block: 1.5rem;
+}
+
+.price,
+.date {
+    width: 49%;
+    display: inline-flex;
+    gap: 0.3rem;
+}
+
+.date {
+    justify-content: end;
+}
+
+.price img,
+.date img{
+    max-height: 1rem;
+}
+
+.price p {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-cyan);
+}
+
+.date p{
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--color-softblue);
+}
+
+/*-----------------------------
+            AUTHOR
+-----------------------------*/
+.author-info {
+    width: 100%;
+    display: flex;
+    gap: 0.8rem;
+    line-height: 200%;
+    color: var(--color-softblue);
+    font-weight: 300;
+    font-size: 0.9rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-darkblueline);
+}
+
+.author-info img {
+    max-width: 2rem;
+    border: 1px solid var(--color-white);
+    border-radius: 100%; 
+}
+
+.author-name {
+    color: var(--color-white);
+    font-weight: 300;
+    font-weight: 400;
+}
+
+/*------------------------------
+            FOOTER
+------------------------------*/
+.attribution {
+    font-size: 0.8rem;
+    font-weight: 400; 
+    color: var(--color-softblue);
+    padding: 2rem 0.8rem;
+    text-align: center;
+} 
+
+.attribution a:hover, 
+.attribution a:active {
+    font-size: 0.82rem;
+}
+
+/*-------------------------------
+            MOBILE VIEW
+-------------------------------*/
+@media (max-width: 375px) {
+    .nft-card {
+        max-width: 20rem;
+    }
+
+    .images-container {
+        max-width: 16.8rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .nft-card {
+        max-width: 18rem;
+    }
+
+    .images-container {
+        max-width: 14.8rem;
+    }
+}
